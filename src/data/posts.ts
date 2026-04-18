@@ -58,31 +58,5 @@ src/styles/
 
 感谢原作者 [5h1nnN](https://github.com/5h1nnN) 创作的优秀 Hexo 主题!`,
     tags: ['迁移', 'React', 'Hexo']
-  },
-  {
-    id: '2',
-    title: '如何自定义主题',
-    date: '2026-04-18',
-    excerpt: '了解这个主题的颜色和样式。',
-    content: `# 如何自定义主题
-
-你可以在 \`src/styles/_partial/_variables.scss\` 文件中自定义主题颜色和背景图片。
-
-## 主题颜色
-
-\`\`\`scss
---primary-color: #3c7fb1;
---highlight-color: #aaddfa;
---secondary-color: #d8e1e7;
-\`\`\`
-
-## 背景图片
-
-\`\`\`scss
---bg-image: url(/image/bg.jpg);
-\`\`\`
-
-修改这些变量即可改变整个主题的外观。`,
-    tags: ['教程', '自定义']
   }
 ];
