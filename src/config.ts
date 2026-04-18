@@ -1,21 +1,22 @@
 // src/config.ts
 export const siteConfig = {
-  title: "ShinN's Blog",
+  title: "Yume",
   subtitle: "live happily.",
-  author: "ShinN",
-  description: "The brain is wider than the sky...",
+  author: "Yume",
+  description: "我是企饿饿",
   profile: {
-    avatar: "/image/avatar.jpg", // 记得把图片放到 public 目录下
-    avatar_link: "https://github.com/yourname",
-    social:[
-      { name: "Github", link: "...", icon: "/image/icon/github.png" },
+    avatar: "/image/icon/kimika.jpg",
+    avatar_link: "https://github.com/higashitaniyume",
+    social: [
+      { name: "Github", link: "https://vlnc.top/github", icon: "/image/icon/github.png" },
+      { name: "Bilibili", link: "https://vlnc.top/bilibili", icon: "/image/icon/bilibili.png" },
     ]
   },
   music: {
     autoplay: false,
-    songs:[
-      { title: "Song 1", artist: "Artist 1", cover: "/image/cover1.jpg", url: "/music/1.mp3" },
-      // ...
+    songs: [
+      // 添加你的音乐文件
+      // { title: "Song Title", artist: "Artist Name", cover: "/image/cover.jpg", url: "/music/song.mp3" },
     ]
   }
 };

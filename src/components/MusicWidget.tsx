@@ -1,8 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { siteConfig } from '../config';
 
+interface Song {
+  title: string;
+  artist: string;
+  cover: string;
+  url: string;
+}
+
 export default function MusicWidget() {
-  const playlist = siteConfig.music.songs;
+  const playlist = siteConfig.music.songs as Song[];
   const audioRef = useRef<HTMLAudioElement>(null);
   
   const[currentIndex, setCurrentIndex] = useState(0);
