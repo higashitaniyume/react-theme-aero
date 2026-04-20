@@ -4,7 +4,7 @@ import { posts } from '../data/posts';
 export default function Archives() {
   // 按年份分组
   const postsByYear = posts.reduce((acc, post) => {
-    const year = new Date(post.date).getFullYear();
+    const year = new Date(post.pubDate).getFullYear();
     if (!acc[year]) {
       acc[year] = [];
     }
@@ -23,7 +23,7 @@ export default function Archives() {
             {postsByYear[Number(year)].map((post) => (
               <div key={post.id} className="archive-item">
                 <span className="archive-date">
-                  {new Date(post.date).toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })}
+                  {new Date(post.pubDate).toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })}
                 </span>
                 <Link className="archive-title" to={`/post/${post.id}`}>
                   {post.title || 'Untitled'}
