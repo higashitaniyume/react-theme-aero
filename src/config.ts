@@ -12,11 +12,14 @@ export const siteConfig = {
       { name: "Bilibili", link: "https://vlnc.top/bilibili", icon: "/image/icon/bilibili.png" },
     ]
   },
-  music: {
+    music: {
     autoplay: false,
     songs: [
       // 添加你的音乐文件
       // { title: "Song Title", artist: "Artist Name", cover: "/image/cover.jpg", url: "/music/song.mp3" },
     ]
-  }
+  },
+  friendLinks: [
+    { name: "工仔小猫", url: "https://wxhou.cn/" },
+  ]
 };

@@ -30,6 +30,21 @@ export default function ProfileWidget() {
           </div>
         </div>
         <div className="about" dangerouslySetInnerHTML={{ __html: siteConfig.description }} />
+        
+        {siteConfig.friendLinks && siteConfig.friendLinks.length > 0 && (
+          <div className="friend-links">
+            <h3>友情链接</h3>
+            <ul>
+              {siteConfig.friendLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="friend-link-item">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );

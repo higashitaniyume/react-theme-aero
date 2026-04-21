@@ -1,0 +1,127 @@
+.friend-links {
+  margin-top: 25px;
+  padding: 20px 15px 15px;
+  position: relative;
+  border-top: 1px solid rgba(from var(--white-main) r g b / 0.2);
+  
+  h3 {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    color: var(--black-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '\eb11'; // ri-links-line
+      font-family: 'remixicon';
+      font-weight: normal;
+      font-size: 1.1rem;
+      color: var(--primary-color); // Keep the icon in theme color for a nice touch
+      opacity: 0.8;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  .friend-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    background: var(--aero-grad);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+      inset 0 0 0 1px var(--white-main),
+      0 0 0 0.5px var(--black-main),
+      2px 2px 6px rgba(from var(--black-main) r g b / 0.3);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    text-align: center;
+
+    // The "Glass Shine" effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 45%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.05) 55%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(-45deg);
+      transition: all 0.5s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, 
+        rgba(from var(--highlight-color) r g b / 0.5) 0%, 
+        rgba(from var(--highlight-color) r g b / 0.1) 50%,
+        rgba(from var(--black-main) r g b / 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover {
+      transform: translateY(-3px) scale(1.03);
+      color: color-mix(in srgb, var(--primary-color), black 30%);
+      box-shadow:
+        inset 0 0 0 1px var(--white-main),
+        0 0 0 0.5px var(--black-main),
+        0 0 15px rgba(from var(--highlight-color) r g b / 0.4),
+        4px 6px 12px rgba(from var(--black-main) r g b / 0.4);
+      
+      &::before {
+        top: -50%;
+        left: -50%;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+      box-shadow:
+        inset 0 2px 5px rgba(from var(--black-main) r g b / 0.2),
+        0 0 0 0.5px var(--black-main),
+        1px 1px 3px rgba(from var(--black-main) r g b / 0.4);
+    }
+  }
+}
