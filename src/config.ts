@@ -15,8 +15,8 @@ export const siteConfig = {
     music: {
     autoplay: false,
     songs: [
-      // 添加你的音乐文件
-      // { title: "Song Title", artist: "Artist Name", cover: "/image/cover.jpg", url: "/music/song.mp3" },
+      
+      { title: "空気力学少女と少年の詩 -Piano Ver.-", artist: "松本文紀", cover: "/image/cover/cover1.jpg", url: "/music/bgm1.mp3" },
     ]
   },
   friendLinks: [
