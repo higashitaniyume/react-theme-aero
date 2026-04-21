@@ -4,6 +4,12 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { posts } from '../data/posts';
 
+const getAbsoluteUrl = (path: string): string => {
+  const domain = import.meta.env.VITE_WEBSITE_DOMAIN || '';
+  if (!path || path.startsWith('http')) return path;
+  return domain ? `${domain.replace(/\/$/, '')}${path}` : path;
+};
+
 export default function Post() {
   const { id } = useParams<{ id: string }>();
   const post = posts.find(p => p.id === id);
@@ -27,14 +33,13 @@ export default function Post() {
       el.setAttribute('content', content);
     };
 
-    setMeta('description', post.description || '');
+        setMeta('description', post.description || '');
     setMeta('og:title', post.title, true);
     setMeta('og:description', post.description || '', true);
     if (post.heroImage) {
-      // Ensure the image URL is absolute for social media if possible,
-      // but relative works for some basic crawlers or when resolved by SSR.
-      setMeta('og:image', post.heroImage, true);
-      setMeta('twitter:image', post.heroImage);
+      const absoluteImageUrl = getAbsoluteUrl(post.heroImage);
+      setMeta('og:image', absoluteImageUrl, true);
+      setMeta('twitter:image', absoluteImageUrl);
       setMeta('twitter:card', 'summary_large_image');
     }
 
