@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import { posts } from '../data/posts';
 
 const getAbsoluteUrl = (path: string): string => {
-  const domain = import.meta.env.VITE_WEBSITE_DOMAIN || '';
+  const domain = import.meta.env.VITE_WEBSITE_DOMAIN || 'https://yume.vlnc.top/';
   if (!path || path.startsWith('http')) return path;
   return domain ? `${domain.replace(/\/$/, '')}${path}` : path;
 };
