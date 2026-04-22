@@ -1,81 +1,81 @@
-# React + Vite 博客
+# React + Vite Blog
 
-这是一个从 Hexo 主题转换而来的 React + Vite 博客项目，保留了原 Hexo-theme-aero 的 Frutiger Aero 风格设计。
+A React + Vite blog project ported from the Hexo theme, preserving the iconic **Frutiger Aero** design from the original `hexo-theme-aero`.
 
-## 特性
+## Features
 
-- ✨ 响应式布局
-- 🎨 Frutiger Aero 风格界面
-- 📝 Markdown 支持
-- 🎵 音乐播放器
-- 🎯 代码高亮
-- 📱 移动端适配
+- ✨ **Responsive Layout** - Fully optimized for all screen sizes.
+- 🎨 **Frutiger Aero Aesthetic** - Glassy, glossy, and vibrant UI design.
+- 📝 **Markdown Support** - Write your posts easily using Markdown.
+- 🎵 **Music Player** - Built-in background music functionality.
+- 🎯 **Syntax Highlighting** - Beautiful code blocks for technical writing.
+- 📱 **Mobile Optimized** - Seamless experience on mobile devices.
 
-## 快速开始
+## Getting Started
 
-### 安装依赖
+### Prerequisites
 
 ```bash
 npm install
-# 或
+# or
 pnpm install
 ```
 
-### 开发
+### Development
 
 ```bash
 npm run dev
 ```
 
-### 构建
+### Build
 
 ```bash
 npm run build
 ```
 
-### 预览
+### Preview
 
 ```bash
 npm run preview
 ```
 
-## 项目结构
+## Project Structure
 
-```
+```text
 src/
-├── components/          # 组件
-│   ├── Header.tsx      # 头部导航
-│   ├── Footer.tsx      # 页脚
-│   ├── Sidebar.tsx     # 侧边栏
-│   ├── ProfileWidget.tsx   # 个人信息组件
-│   └── MusicWidget.tsx     # 音乐播放器
-├── pages/              # 页面
-│   ├── Home.tsx        # 首页
-│   ├── Archives.tsx    # 归档页
-│   ├── About.tsx       # 关于页
-│   └── Post.tsx        # 文章详情页
-├── data/               # 数据
-│   └── posts.ts        # 文章数据
-├── styles/             # 样式文件
-│   └── _partial/       # 样式模块
-├── config.ts           # 站点配置
-├── Layout.tsx          # 布局组件
-├── App.tsx             # 应用入口
-└── main.tsx            # 主入口
+├── components/          # Reusable UI components
+│   ├── Header.tsx      # Navigation bar
+│   ├── Footer.tsx      # Page footer
+│   ├── Sidebar.tsx     # Sidebar container
+│   ├── ProfileWidget.tsx   # User profile component
+│   └── MusicWidget.tsx     # Integrated music player
+├── pages/              # Page views
+│   ├── Home.tsx        # Blog home/index
+│   ├── Archives.tsx    # Post archives
+│   ├── About.tsx       # About page
+│   └── Post.tsx        # Post detail view
+├── data/               # Static data
+│   └── posts.ts        # Blog post content and metadata
+├── styles/             # Stylesheets
+│   └── _partial/       # Style modules/partials
+├── config.ts           # Global site configuration
+├── Layout.tsx          # Main layout wrapper
+├── App.tsx             # Application root
+└── main.tsx            # Entry point
 ```
 
-## 配置
+## Configuration
 
-### 站点配置
+### Site Config
 
-编辑 `src/config.ts` 文件来配置站点信息：
+Customize your site information in `src/config.ts`:
 
 ```typescript
 export const siteConfig = {
-  title: "你的博客标题",
-  subtitle: "副标题",
-  author: "作者名",
-  description: "描述",
+  title: "Your Blog Title",
+  subtitle: "Subtitle",
+  author: "Author Name",
+  description: "Site description",
   profile: {
     avatar: "/image/avatar.jpg",
     avatar_link: "https://github.com/yourname",
@@ -86,101 +86,91 @@ export const siteConfig = {
   music: {
     autoplay: false,
     songs: [
-      { title: "歌曲名", artist: "艺术家", cover: "/image/cover.jpg", url: "/music/song.mp3" },
+      { title: "Song Name", artist: "Artist", cover: "/image/cover.jpg", url: "/music/song.mp3" },
     ]
   }
 };
 ```
 
-### 添加文章
+### Adding Posts
 
-在 `src/data/posts.ts` 中添加文章：
+Add new blog entries in `src/data/posts.ts`:
 
 ```typescript
 export const posts: Post[] = [
   {
     id: '1',
-    title: '文章标题',
+    title: 'Post Title',
     date: '2024-01-15',
-    cover: '/image/cover.jpg',  // 可选
-    excerpt: '文章摘要',
-    content: `# Markdown 内容`,
-    tags: ['标签1', '标签2']
+    cover: '/image/cover.jpg',  // Optional
+    excerpt: 'Short summary of the post',
+    content: `# Your Markdown Content Here`,
+    tags: ['Tag1', 'Tag2']
   },
-  // 更多文章...
 ];
 ```
 
-### 自定义主题
+### Theme Customization
 
-编辑 `src/styles/_partial/_variables.scss` 来自定义主题颜色和背景：
+Modify theme colors and backgrounds in `src/styles/_partial/_variables.scss`:
 
 ```scss
 :root {
-  --primary-color: #3c7fb1;      // 主色调
-  --highlight-color: #aaddfa;    // 高亮色
-  --secondary-color: #d8e1e7;    // 次要色
-  --bg-image: url(/image/bg.jpg); // 背景图片
+  --primary-color: #3c7fb1;      // Primary theme color
+  --highlight-color: #aaddfa;    // Accent/Highlight color
+  --secondary-color: #d8e1e7;    // Secondary UI color
+  --bg-image: url(/image/bg.jpg); // Site-wide background image
 }
 ```
 
-## 添加资源文件
+## Assets
 
-将以下文件放到 `public` 目录：
+Place your static assets in the `public` directory:
 
-```
+```text
 public/
 ├── image/
-│   ├── icon/
-│   │   ├── vista_messenger.jpg
-│   │   ├── vista_book_1.jpg
-│   │   ├── vista_pc_1.jpg
-│   │   ├── github.png
-│   │   └── bilibili.png
-│   ├── bg.jpg          # 背景图片
-│   └── cover.jpg       # 文章封面
-└── music/              # 音乐文件
+│   ├── icon/           # System and social icons
+│   ├── bg.jpg          # Background image
+│   └── cover.jpg       # Default post covers
+└── music/              # Audio files
     └── song.mp3
 ```
 
-## 部署
+## Deployment
 
 ### Cloudflare Pages
-
-1. 将代码推送到 GitHub
-2. 在 Cloudflare Pages 中连接仓库
-3. 构建设置：
-   - 构建命令: `npm run build`
-   - 输出目录: `dist`
+1. Push your code to GitHub.
+2. Connect your repository to Cloudflare Pages.
+3. Build settings:
+   - Build command: `npm run build`
+   - Output directory: `dist`
 
 ### Vercel
-
-1. 导入 GitHub 仓库
-2. Vercel 会自动检测 Vite 项目并配置
+1. Import your GitHub repository.
+2. Vercel will automatically detect the Vite configuration and deploy.
 
 ### Netlify
+1. Connect your repository.
+2. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
 
-1. 连接 GitHub 仓库
-2. 构建设置：
-   - 构建命令: `npm run build`
-   - 发布目录: `dist`
+## Tech Stack
 
-## 技术栈
+- **React 19**
+- **Vite 8**
+- **TypeScript**
+- **React Router**
+- **React Markdown**
+- **Sass**
+- **Remixicon**
 
-- React 19
-- Vite 8
-- TypeScript
-- React Router
-- React Markdown
-- Sass
-- Remixicon
+## License
 
-## 许可证
+Distributed under the MIT License.
 
-MIT License
+## Acknowledgments
 
-## 致谢
-
-- 原 Hexo 主题: [hexo-theme-aero](https://github.com/5h1nnN/hexo-theme-aero)
-- 设计灵感来自 Windows Vista 和 Windows 7
-```
+- Original Hexo Theme: [hexo-theme-aero](https://github.com/5h1nnN/hexo-theme-aero)
+- Visual inspiration: Windows Vista and Windows 7 aesthetics.
