@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import MarkdownRenderer from '../components/MarkdownRenderer';
 import { posts } from '../data/posts';
 
 const getAbsoluteUrl = (path: string): string => {
@@ -77,9 +76,7 @@ export default function Post() {
       )}
 
       <div className="post-content">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {post.content}
-        </ReactMarkdown>
+        <MarkdownRenderer>{post.content}</MarkdownRenderer>
       </div>
     </div>
   );
