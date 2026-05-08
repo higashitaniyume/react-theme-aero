@@ -6,8 +6,9 @@ heroImage: '/image/izumi_1.webp'
 tags: '提交历史'
 ---
 
-## 仓库提交历史
+## 完整提交历史
 
+- **[70820f5]** `2026-05-08` *higashitaniyume* : feat: 添加生成 changelog 功能，自动提取 Git 提交历史并写入文件
 - **[8aae314]** `2026-05-08` *higashitaniyume* : feat: 添加新的图片资源并更新友情链接样式
 - **[58fe90f]** `2026-05-08` *higashitaniyume* : feat: 优化移动端文章内容样式，增强可读性和布局
 - **[f1a3ab9]** `2026-05-08` *higashitaniyume* : refactor: 更新关于页面内容，优化迁移过程描述和结构

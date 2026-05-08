@@ -70,8 +70,8 @@ export default function Post() {
       </div>
       
       {post.heroImage && (
-        <div className="post-cover" style={{ marginBottom: '20px', textAlign: 'center' }}>
-          <img src={post.heroImage} alt={post.title} style={{ maxWidth: '100%', borderRadius: '8px' }} />
+        <div className="post-hero-image">
+          <img src={post.heroImage} alt={post.title} />
         </div>
       )}
 
