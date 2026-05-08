@@ -37,7 +37,7 @@ export default function ProfileWidget() {
             <ul>
               {siteConfig.friendLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="friend-link-item">
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="button friend-link-item">
                     {link.name}
                   </a>
                 </li>
