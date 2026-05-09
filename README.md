@@ -1,6 +1,105 @@
-# React + Vite Blog
+# Frutiger Aero Blog — React + Vite
 
-A React + Vite blog project ported from the Hexo theme, preserving the iconic **Frutiger Aero** design from the original `hexo-theme-aero`.
+A modern, responsive personal blog built with **React** and **Vite**, ported from the original [hexo-theme-aero](https://github.com/5h1nnN/hexo-theme-aero). It preserves the iconic **Frutiger Aero** design aesthetic — glassy, glossy, and vibrant UI inspired by Windows Vista and Windows 7.
+
+![Hero screenshot](./src/assets/hero.png)
+
+## ✨ Features
+
+- **📱 Fully Responsive** — Optimized for desktops, tablets, and mobile devices.
+- **🎨 Frutiger Aero Style** — Translucent panels, soft highlights, and a nostalgic visual flair.
+- **📝 Markdown Content** — Write blog posts and pages using plain Markdown files with frontmatter metadata.
+- **🎵 Built-in Music Player** — Background music with playlist support, configurable autoplay, and progress controls.
+- **🔗 Social & Profile Widget** — Showcase your avatar, bio, and links to GitHub, Bilibili, etc.
+- **💬 Friend Links** — Display a curated list of blogrolls in the sidebar.
+- **🏷️ Tag Support** — Categorize posts with tags (visible on Archives page and post details).
+- **📄 About Page** — Write a custom "About Me" page in Markdown.
+- **⚡ High Performance** — Powered by Vite for fast HMR and optimized production builds.
+- **🔧 Easy Customization** — All site config, themes, and content centralized in one place.
+- **🌗 Dark Mode** — Automatic light/dark theme based on system preference.
+- **🔍 SEO Meta Tags** — Dynamic Open Graph and Twitter card tags for social sharing.
+- **📦 Static Deployment** — Ready for Cloudflare Pages, Vercel, or Netlify.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js >= 18
+- pnpm (recommended) or npm
+
+### Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start dev server (usually http://localhost:5173)
+pnpm dev
+```
+
+### Build
+
+```bash
+pnpm build
+```
+
+### Preview Production Build
+
+```bash
+pnpm preview
+```
+
+## 📁 Project Structure
+
+```
+├── public/                  # Static assets (icons, music, images)
+│   ├── image/
+│   │   ├── icon/            # Social / system icons
+│   │   ├── bg.jpg           # Site background image
+│   │   ├── cover.jpg        # Default post cover
+│   │   └── ...              # Other images (kimika.jpg, izumi_1.webp, etc.)
+│   └── music/               # Audio files (bgm1.mp3, etc.)
+├── src/
+│   ├── assets/              # Project-specific assets (logos, hero image)
+│   ├── components/          # Reusable UI components
+│   │   ├── Header.tsx       # Top navigation bar with active route highlighting
+│   │   ├── Footer.tsx       # Page footer with copyright and credits
+│   │   ├── Sidebar.tsx      # Sidebar container (includes ProfileWidget & MusicWidget)
+│   │   ├── ProfileWidget.tsx # Avatar, social links, bio, and friend links
+│   │   ├── MusicWidget.tsx  # Music player with play/pause, prev/next, progress bar
+│   │   └── MarkdownRenderer.tsx  # Markdown → HTML renderer with syntax highlighting
+│   ├── config/
+│   │   └── index.ts         # Re-exported config (optional)
+│   ├── config.ts            # Global site configuration (title, author, social, music, links)
+│   ├── content/
+│   │   ├── aboutme.md       # Markdown content for the About page
+│   │   └── posts/           # Blog post Markdown files with frontmatter
+│   │       ├── about.md     # Project migration story
+│   │       ├── yume.md      # Birthday / personal post
+│   │       └── CHANGELOG.md # Full commit history
+│   ├── data/
+│   │   └── posts.ts         # Post metadata loader with frontmatter parsing
+│   ├── pages/
+│   │   ├── Home.tsx         # Blog homepage — displays recent posts with covers & excerpts
+│   │   ├── Archives.tsx     # All posts grouped by year
+│   │   ├── Post.tsx         # Single post detail page with SEO meta tags
+│   │   └── About.tsx        # About / personal page with Markdown rendering
+│   ├── styles/
+│   │   ├── _partial/        # SCSS partials (variables, components)
+│   │   └── style.scss       # Main style entry file
+│   ├── App.tsx              # Root React component with route definitions
+│   ├── Layout.tsx           # Main layout (Header + Sidebar + Content + Footer) with mobile menu
+│   ├── main.tsx             # Application entry point with BrowserRouter
+│   └── index.css            # Global CSS reset & base styles with light/dark theme
+├── scripts/
+│   └── generate-meta.js     # Post-build script for meta tag generation
+├── index.html               # HTML entry point (lang="zh")
+├── vite.config.ts           # Vite configuration with React plugin
+├── tsconfig.json            # TypeScript configuration
+├── eslint.config.js         # ESLint flat configuration
+├── pnpm-lock.yaml           # Dependency lockfile
+└── package.json             # Project manifest and scripts
+```
 
 ## Features
 
